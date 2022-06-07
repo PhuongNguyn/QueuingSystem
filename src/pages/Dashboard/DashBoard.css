@@ -1,0 +1,114 @@
+.dash-board{
+    height: 100%;
+}
+
+.dash-board-wrapper{
+    display: flex;
+    height: 100%;
+}
+
+.dash-board-chart--title{
+    width: 162px;
+    height: 36px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #FF7506;
+    margin-top: 104px;
+}
+
+.dash-board-chart{
+    padding: 0 24px;
+    width: calc(100% - 401px);
+}
+
+.dash-board-statistic{
+    width: 401px;
+    background-color: white;
+    padding: 0 24px;
+}
+
+.dash-board-statistic--title{
+    width: 120px;
+    height: 36px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #FF7506;
+    margin-top: 104px;
+}
+
+.dash-board-chart__statistic{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.dash-board-chart-statistic__card{
+    width: 182px;
+    height: 120px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1);
+    padding: 8px 12px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.dash-board-chart-satistic-card__title--icon{
+    width: 48px;
+    height: 48px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dash-board-chart-satistic-card__title--title{
+    width: 78px;
+    height: 36px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: #535261;
+    margin-left: 10px;
+    margin-top: 6px;
+    text-align: start;
+}
+
+.dash-board-chart-statistic-card__title{
+    display: flex
+}
+
+.dash-board-chart-satistic-card__number--number{
+    width: 108px;
+    height: 45px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 45px;
+    color: #535261;
+    margin-top: 10px;
+    text-align: start;
+}
+
+.dash-board-chart-satistic-card__number{
+    display: flex;
+}
+
+.dash-board-chart-satistic-card__number--percent{
+    width: 40px;
+    height: 12px;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+    width: 48px;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    border-radius: 7.18115px;
+}
+

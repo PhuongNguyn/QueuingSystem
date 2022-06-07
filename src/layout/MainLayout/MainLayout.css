@@ -1,0 +1,22 @@
+.main-layout{
+    height: 100%;
+    width: 100%;
+    color: #7E7D88!important;
+}
+
+.main-layout-wrapper{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+.main-layout-navbar{
+    width: 200px;
+    height: 100%;
+}
+
+.main-layout-main-content{
+    width: 1240px;
+    height: 100%;
+    background-color: #f7f7f7;
+}
