@@ -298,7 +298,7 @@
 }
 .react-calendar {
     border: none!important;
-    width: 300px;
+    width: 300px!important;
     height: 300px;
     margin: 0 auto;
 }
@@ -356,10 +356,21 @@
     font-size: 14px;
     line-height: 19px;
     color: #535261!important;
+
 }
 
 .react-calendar__tile--now{
     background-color: #FF7506!important;
     color: white!important;
     border-radius: 5px;
+    pointer-events: none;
+}
+
+.react-calendar__month-view__days__day{
+    width: 36px!important;
+    height: 36px!important;
+}
+
+.react-calendar__month-view__days__day:hover{
+    background-color: white!important;
 }
