@@ -50,6 +50,7 @@
     display: none;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    z-index: 2;
 }
 
 .navbar__option ul li:hover .setting-system-option{

@@ -195,6 +195,10 @@
     z-index: 1;
 }
 
+.active-status__option ul , .connect-status__option ul{
+    list-style-type: none;
+}
+
 .active-status__option ul li, .connect-status__option ul li{
     padding: 10px 12px;
     box-sizing: border-box;
@@ -224,6 +228,7 @@
     box-shadow: 0px 0px 6px #E7E9F2;
     border-radius: 8px 0px 0px 8px;
     cursor: pointer;
+    box-sizing: border-box;
 }
 .equipment__create p{
     font-weight: 600;

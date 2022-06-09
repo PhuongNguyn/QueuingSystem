@@ -193,7 +193,7 @@ const Equipment = () => {
                 </div>
             </div>
             <div className = "equipment__create">
-                <BsFillPlusSquareFill size = {25} style = {{color: '#FF9138', marginTop: '12px'}}/>
+                <BsFillPlusSquareFill size = {25} style = {{color: '#FF9138'}}/>
                 <p>Thêm thiết bị</p>
             </div>
         </div>

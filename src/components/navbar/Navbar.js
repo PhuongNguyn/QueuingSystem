@@ -7,8 +7,10 @@ import {BsThreeDotsVertical} from 'react-icons/bs'
 import {FiLayers, FiLogOut} from 'react-icons/fi'
 import {RiSettingsLine} from 'react-icons/ri'
 import {HiOutlineDocumentReport} from 'react-icons/hi'
+import { useNavigate } from 'react-router-dom'
 
 const Navbar = () =>{
+    const navigate = useNavigate()
     return (
         <div className = "navbar">
             <img className = "navbar--logo" src='/images/Logo-alta.png' alt = "logo-alta"/>
@@ -36,7 +38,7 @@ const Navbar = () =>{
                     </li>
                 </ul>
             </div>
-            <div className='navbar__button-logout'>
+            <div className='navbar__button-logout' onClick = {()=>navigate('/login')}>
                 <span><FiLogOut size = {20} style = {{verticalAlign: '-4px', marginRight: '6px'}}/> Đăng xuất</span>
             </div>
         </div>
