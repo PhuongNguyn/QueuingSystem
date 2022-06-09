@@ -2,7 +2,8 @@ import './Equipment.css'
 import {AiFillCaretDown, AiFillCaretUp} from 'react-icons/ai'
 import { FiSearch } from 'react-icons/fi'
 import { useState } from 'react'
-import { BsDot } from 'react-icons/bs'
+import { BsDot, BsFillPlusSquareFill } from 'react-icons/bs'
+
 
 const Equipment = () => {
     const [activeStatus, setActiveStatus] = useState(false)
@@ -190,6 +191,10 @@ const Equipment = () => {
                         )} 
                     </table>
                 </div>
+            </div>
+            <div className = "equipment__create">
+                <BsFillPlusSquareFill size = {25} style = {{color: '#FF9138', marginTop: '12px'}}/>
+                <p>Thêm thiết bị</p>
             </div>
         </div>
     )
