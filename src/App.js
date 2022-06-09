@@ -9,6 +9,7 @@ import MainLayout from './layout/MainLayout/MainLayout';
 import Equipment from './pages/Equipment/Equipment';
 import ManageRoles from './pages/ManageRoles/ManageRoles';
 import UserInfo from './pages/UserInfo/UserInfo';
+import CreateEquipment from './pages/CreateEquipment/CreateEquipment';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path = "/" element ={<MainLayout/>}>
               <Route index element = {<DashBoard/>}/>
               <Route path = "/equipment/listEquipment" element = {<Equipment/>}/>
+              <Route path = "/equipment/listEquipment/createEquipment" element = {<CreateEquipment/>}/>
               <Route path = "/setting/manageRoles" element = {<ManageRoles/>}/>
               <Route path = "/userInfo" element = {<UserInfo/>}/>
             </Route>

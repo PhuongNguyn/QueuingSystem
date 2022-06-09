@@ -85,6 +85,7 @@
     border-radius: 10px;
     right: 15px;
     top: 90px;
+    z-index: 2;
 }
 
 .header__notificaation-table--title{

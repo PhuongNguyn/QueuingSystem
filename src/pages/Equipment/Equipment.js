@@ -1,15 +1,20 @@
 import './Equipment.css'
-import {AiFillCaretDown, AiFillCaretUp} from 'react-icons/ai'
+import {AiFillCaretDown, AiFillCaretUp, AiOutlineCaretRight, AiOutlineCaretLeft} from 'react-icons/ai'
 import { FiSearch } from 'react-icons/fi'
 import { useState } from 'react'
 import { BsDot, BsFillPlusSquareFill } from 'react-icons/bs'
+import { useNavigate } from 'react-router-dom'
+import { Pagination } from 'react-bootstrap'
 
 
 const Equipment = () => {
+    const navigate = useNavigate()
     const [activeStatus, setActiveStatus] = useState(false)
     const [connectStatus, setConnectStatus] = useState(false)
     const [activeStatusType, setActiveStatusType] = useState('all')
     const [connectStatusType, setConnectStatusType] = useState('all')
+
+ 
     const activeStatusName = {
         'all': 'Tất cả',
         'active': 'Hoạt động',
@@ -21,7 +26,7 @@ const Equipment = () => {
         'active': 'Kết nối',
         'notactive': 'Mất kết nối',
     }
-    const data = [
+    const [data, setData] = useState([
         {
             id: 1,
             code: 'KIO_01',
@@ -29,7 +34,8 @@ const Equipment = () => {
             address: '192.168.1.10',
             activeStatus: true,
             connectStatus: false,
-            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng'
+            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng',
+            showAll: false,
         },
         {
             id: 2,
@@ -38,7 +44,8 @@ const Equipment = () => {
             address: '192.168.1.10',
             activeStatus: true,
             connectStatus: false,
-            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng'
+            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng',
+            showAll: false,
         },
         {
             id: 3,
@@ -47,7 +54,8 @@ const Equipment = () => {
             address: '192.168.1.10',
             activeStatus: true,
             connectStatus: false,
-            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng'
+            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng',
+            showAll: false,
         },
         {
             id: 4,
@@ -56,7 +64,8 @@ const Equipment = () => {
             address: '192.168.1.10',
             activeStatus: true,
             connectStatus: false,
-            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng'
+            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng',
+            showAll: false,
         },
         {
             id: 5,
@@ -65,7 +74,8 @@ const Equipment = () => {
             address: '192.168.1.10',
             activeStatus: true,
             connectStatus: false,
-            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng'
+            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng',
+            showAll: false,
         },
         {
             id: 6,
@@ -74,7 +84,8 @@ const Equipment = () => {
             address: '192.168.1.10',
             activeStatus: true,
             connectStatus: false,
-            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng'
+            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng',
+            showAll: false,
         },
         {
             id: 7,
@@ -83,7 +94,8 @@ const Equipment = () => {
             address: '192.168.1.10',
             activeStatus: true,
             connectStatus: false,
-            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng'
+            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng',
+            showAll: false,
         },
         {
             id: 8,
@@ -92,7 +104,8 @@ const Equipment = () => {
             address: '192.168.1.10',
             activeStatus: true,
             connectStatus: false,
-            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng'
+            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng',
+            showAll: false,
         },
         {
             id: 9,
@@ -101,9 +114,32 @@ const Equipment = () => {
             address: '192.168.1.10',
             activeStatus: true,
             connectStatus: false,
-            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng'
+            service: 'Khám tim mạch, khám mắt, khám tổng quát, khám nội, khám tai mũi họng',
+            showAll: false,
         }
-    ]
+    ])
+
+    const handleClickSmallService = (id)=>{
+        const newData = data.map((item)=>{
+            if(item.id === id){
+                item.showAll = false
+           }
+           return item
+        })
+        setData(newData)   
+    }
+
+    const handleClickReadmore = (id) =>{
+        const newData = data.map((item)=>{
+            if(item.id === id){
+                item.showAll = true
+           }
+           return item
+        })
+        setData(newData)   
+    }
+
+    console.log(data)
     return (
         <div className = "equipment">
             <h1 className = "equipment--title">Danh sách thiết bị</h1>
@@ -181,9 +217,11 @@ const Equipment = () => {
                                 <td width={139}>{item.address}</td>
                                 <td  width={172}><BsDot size = {25} style = {!item.activeStatus ? {color: '#EC3740', verticalAlign: '-8px'} : {color: '#34CD26', verticalAlign: '-8px'}}/>{item.activeStatus ? 'Hoạt động' : 'Ngưng hoạt động'}</td>
                                 <td width={145}><BsDot style = {!item.connectStatus ? {color: '#EC3740', verticalAlign: '-8px'} : {color: '#34CD26', verticalAlign: '-8px'}} size = {25}/>{item.connectStatus ? 'Kết nối': 'Mất kết nối'}</td>
-                                <td width={268}>
-                                    <p className = "equipment-table--service">{item.service}</p>
-                                    <p className = "equipment-table--readmore">Xem thêm</p>
+                                <td style={{position:'relative'}} width={268}>
+                                    {item.showAll && <p onClick = {()=>handleClickSmallService(item.id)} className = "equipment-table--service-hidden">{item.service}</p>}
+                                    <p className = "equipment-table--service">{item.service}
+                                    </p>
+                                    <p onClick = {()=>handleClickReadmore(item.id)} className = "equipment-table--readmore">Xem thêm</p>
                                 </td>
                                 <td width={82}><span className = "equiment-table--detail">Chi tiết</span></td>
                                 <td width={106}><span  className = "equiment-table--update">Cập nhật</span></td>
@@ -191,8 +229,21 @@ const Equipment = () => {
                         )} 
                     </table>
                 </div>
+                <div className = "equipment__dividePage">
+                    <ul>
+                        <li><AiOutlineCaretLeft style = {{verticalAlign: '-2.5px'}}/></li>
+                        <li style = {{backgroundColor: '#FF7506', color: 'white'}}>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>...</li>
+                        <li>10</li>
+                        <li><AiOutlineCaretRight style = {{verticalAlign: '-2.5px'}}/></li>
+                    </ul>
+                </div>
             </div>
-            <div className = "equipment__create">
+            <div className = "equipment__create" onClick = {()=>navigate('createEquipment')}>
                 <BsFillPlusSquareFill size = {25} style = {{color: '#FF9138'}}/>
                 <p>Thêm thiết bị</p>
             </div>

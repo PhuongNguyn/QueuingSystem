@@ -22,7 +22,8 @@ const Header = () =>{
         'manageRoles': 'Quản lý vai trò',
         'manageAccount': 'Quản lý tài khoản',
         'userDiary': 'Nhật ký người dùng',
-        'userInfo': 'Thông tin cá nhân'
+        'userInfo': 'Thông tin cá nhân',
+        'createEquipment': 'Thêm thiết bị'
     }
     const notificationData = [
         {
