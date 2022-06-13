@@ -1,7 +1,8 @@
 .main-layout{
     height: 100%;
-    width: 100%;
+    width: 1440px;
     color: #7E7D88!important;
+    border-radius: 8px;
 }
 
 .main-layout-wrapper{
@@ -9,7 +10,7 @@
     flex-direction: row;
     height: 100%;
 }
-
+ 
 .main-layout-navbar{
     width: 200px;
     height: 100%;
@@ -18,5 +19,6 @@
 .main-layout-main-content{
     width: 1240px;
     height: 100%;
+    position: relative;
     background-color: #f7f7f7;
 }

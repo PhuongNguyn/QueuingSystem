@@ -4,7 +4,6 @@ import { FiSearch } from 'react-icons/fi'
 import { useState } from 'react'
 import { BsDot, BsFillPlusSquareFill } from 'react-icons/bs'
 import { useNavigate } from 'react-router-dom'
-import { Pagination } from 'react-bootstrap'
 
 
 const Equipment = () => {
@@ -129,6 +128,10 @@ const Equipment = () => {
         setData(newData)   
     }
 
+    const handleDetailClick = () =>{
+        navigate('equipmentDetail')
+    }
+
     const handleClickReadmore = (id) =>{
         const newData = data.map((item)=>{
             if(item.id === id){
@@ -139,10 +142,12 @@ const Equipment = () => {
         setData(newData)   
     }
 
-    console.log(data)
+    const handleEditClick = () =>{
+        navigate('editEquipment')
+    }
     return (
         <div className = "equipment">
-            <h1 className = "equipment--title">Danh sách thiết bị</h1>
+            <h1 className = "equipment--title page--title">Danh sách thiết bị</h1>
             <div className = "equipment__select-input">
                 <div className = "equipment-select-input__status">
                     <div className = "equipment-select-input-status__active-status">
@@ -223,13 +228,13 @@ const Equipment = () => {
                                     </p>
                                     <p onClick = {()=>handleClickReadmore(item.id)} className = "equipment-table--readmore">Xem thêm</p>
                                 </td>
-                                <td width={82}><span className = "equiment-table--detail">Chi tiết</span></td>
-                                <td width={106}><span  className = "equiment-table--update">Cập nhật</span></td>
+                                <td width={82}><span onClick = {()=>handleDetailClick()} className = "equiment-table--detail">Chi tiết</span></td>
+                                <td width={106}><span onClick = {()=>handleEditClick()} className = "equiment-table--update">Cập nhật</span></td>
                             </tr>    
                         )} 
                     </table>
                 </div>
-                <div className = "equipment__dividePage">
+                <div className = "dividePage">
                     <ul>
                         <li><AiOutlineCaretLeft style = {{verticalAlign: '-2.5px'}}/></li>
                         <li style = {{backgroundColor: '#FF7506', color: 'white'}}>1</li>

@@ -23,7 +23,14 @@ const Header = () =>{
         'manageAccount': 'Quản lý tài khoản',
         'userDiary': 'Nhật ký người dùng',
         'userInfo': 'Thông tin cá nhân',
-        'createEquipment': 'Thêm thiết bị'
+        'createEquipment': 'Thêm thiết bị',
+        'equipmentDetail': 'Chi tiết thiết bị',
+        'editEquipment': 'Cập nhật thiết bị',
+        'service': 'Dịch vụ',
+        'listService': 'Danh sách dịch vụ',
+        'createService': 'Thêm dịch vụ',
+        'editService': 'Cập nhật',
+        'serviceDetail': 'Chi tiết dịch vụ'
     }
     const notificationData = [
         {
