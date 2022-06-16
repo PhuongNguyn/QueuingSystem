@@ -209,11 +209,11 @@ const Equipment = () => {
                             <td width={104}>Mã thiết bị</td>
                             <td width={100}>Tên thiết bị</td>
                             <td width={139}>Địa chỉ IP</td>
-                            <td width={172}>Trạng thái hoạt động</td>
-                            <td width={145}>Trạng thái kết nối</td>
-                            <td width={268}>Dịch vụ sử dụng</td>
+                            <td width={178}>Trạng thái hoạt động</td>
+                            <td width={153}>Trạng thái kết nối</td>
+                            <td width={260}>Dịch vụ sử dụng</td>
                             <td width={82}></td>
-                            <td width={106}></td>
+                            <td width={100}></td>
                         </tr>
                         {data.map(item => 
                             <tr>

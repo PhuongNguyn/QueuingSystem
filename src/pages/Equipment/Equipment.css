@@ -4,6 +4,18 @@
 
 .page-css{
     padding: 0 24px 0 30px;
+    box-sizing: border-box;
+}
+
+.page-box{
+    width: 1112px;
+    height: 550px;
+    background: #FFFFFF;
+    box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+    border-radius: 16px;
+    margin-top: 16px;
+    padding: 16px 24px;
+    box-sizing: border-box;
 }
 
 .page--title{
@@ -117,7 +129,7 @@
     overflow: hidden;
     text-align: center;
     text-overflow: ellipsis;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 .equipment-table--readmore{
@@ -127,7 +139,7 @@
     text-decoration-line: underline;
     color: #4277FF;
     text-align: start;
-    margin-left: 20px;
+    margin-left: 10px;
     cursor: pointer;
 }
 

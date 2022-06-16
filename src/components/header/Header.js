@@ -30,7 +30,15 @@ const Header = () =>{
         'listService': 'Danh sách dịch vụ',
         'createService': 'Thêm dịch vụ',
         'editService': 'Cập nhật',
-        'serviceDetail': 'Chi tiết dịch vụ'
+        'serviceDetail': 'Chi tiết dịch vụ',
+        'createNumber': 'Cấp số mới',
+        'numberDetail': 'Chi tiết',
+        'report': 'Báo cáo',
+        'listReport': 'Lập báo cáo',
+        'listRole':'Quản lý vai trò',
+        'createRole': 'Thêm vai trò',
+        'editRole': 'Cập nhật vai trò',
+        'listAccount': 'Quản lí tài khoản'
     }
     const notificationData = [
         {

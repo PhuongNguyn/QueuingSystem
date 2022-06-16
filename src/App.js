@@ -16,10 +16,23 @@ import Service from './pages/Service/Service';
 import CreateService from './pages/CreateService/CreateService';
 import EditService from './pages/EditService/EditService';
 import ServiceDetail from './pages/ServiceDetail/ServiceDetail';
+import Number from './pages/Number/Number';
+import CreateNumber from './pages/CreateNumber/CreateNumber';
+import CreateCard from './pages/CreateNumber/CreateCard';
+import { useSelector } from 'react-redux'
+import NumberDetail from './pages/NumberDetail/NumberDetail';
+import Report from './pages/Report/Report';
+import Role from './pages/Role/Role';
+import CreateRole from './pages/CreateRole/CreateRole';
+import EditRole from './pages/EditRole/EditRole';
+import ManageAccount from './pages/ManageAccount/ManageAccount';
+
 
 function App() {
+  const createNumberCard = useSelector((state) =>state.number.createNumberCard)
   return (
     <div className="App">
+        {createNumberCard && <CreateCard/>}
         <Routes>
             <Route path = "/" element ={<MainLayout/>}>
               <Route index element = {<DashBoard/>}/>
@@ -32,6 +45,14 @@ function App() {
               <Route path = "/service/listService/editService" element = {<EditService/>}/>
               <Route path = "/service/listService/serviceDetail" element = {<ServiceDetail/>}/>
               <Route path = "/setting/manageRoles" element = {<ManageRoles/>}/>
+              <Route path = "/number/listNumber" element = {<Number/>}/>
+              <Route path = "/number/listNumber/createNumber" element = {<CreateNumber/>}/>
+              <Route path = "/number/listNumber/numberDetail" element = {<NumberDetail/>}/>
+              <Route path = '/report/listReport' element = {<Report/>}/>
+              <Route path = '/setting/listRole' element = {<Role/>}/>
+              <Route path = '/setting/listRole/createRole' element = {<CreateRole/>}/>
+              <Route path = '/setting/listRole/editRole' element = {<EditRole/>}/>
+              <Route path = '/setting/listAccount' element = {<ManageAccount/>}/>
               <Route path = "/userInfo" element = {<UserInfo/>}/>
             </Route>
             <Route path = "/login" element = {<LoginLayout/>}>

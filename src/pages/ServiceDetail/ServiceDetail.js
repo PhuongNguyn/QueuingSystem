@@ -2,11 +2,12 @@ import './ServiceDetail.css'
 import {HiPencil} from 'react-icons/hi'
 import { useNavigate } from 'react-router-dom'
 import {TbArrowBackUp} from 'react-icons/tb'
-import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai'
+import { AiFillCaretDown, AiFillCaretUp,AiOutlineCaretLeft, AiOutlineCaretRight } from 'react-icons/ai'
 import { useState } from 'react'
 import { FaRegCalendarAlt } from 'react-icons/fa'
 import { BsFillCaretRightFill } from 'react-icons/bs'
 import { BiSearch } from 'react-icons/bi'
+import Calendar from 'react-calendar'
 
 const ServiceDetail = () =>{
     const navigate = useNavigate()
@@ -17,6 +18,16 @@ const ServiceDetail = () =>{
     const [toggleTimeFrom , setToggleTimeFrom] = useState(false)
     const [toggleTimeTo , setToggleTimeTo] = useState(false)
 
+  
+
+    const handleChangeValueFrom = (value)=>{
+        const date = new Date(value)
+        setTimeFrom(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`)
+    }
+    const handleChangeValueTo = (value) =>{
+        const date = new Date(value)
+        setTimeTo(`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`)
+    }
 
     const statusOptionName = {
         'all': 'Tất cả',
@@ -24,6 +35,41 @@ const ServiceDetail = () =>{
         'made': 'Đã thực hiện',
         'absent': 'Vắng'
     }
+
+    const data = [
+        {
+            'count': '2010001',
+            'status': 'complete'
+        },
+        {
+            'count': '2010002',
+            'status': 'absent'
+        },
+        {
+            'count': '2010003',
+            'status': 'made'
+        },
+        {
+            'count': '2010004',
+            'status': 'complete'
+        },
+        {
+            'count': '2010005',
+            'status': 'complete'
+        },
+        {
+            'count': '2010006',
+            'status': 'complete'
+        },
+        {
+            'count': '2010007',
+            'status': 'complete'
+        },
+        {
+            'count': '2010008',
+            'status': 'complete'
+        },
+    ]
 
     const handleToggleCalendarFrom = () =>{
         setToggleTimeFrom(!toggleTimeFrom)
@@ -49,7 +95,7 @@ const ServiceDetail = () =>{
                             <p>Tăng tự động: <input type = "text" value={'0001'}/> đến <input type = "text" value={'9999'}/></p>
                         </div>
                         <div className='service-detail-number-rule__input--prefix'>
-                            <p>Prefix: <input type = "text" style = {{marginLeft: '68px'}} value={'0001'}/></p>
+                            <p>Prefix: <input type = "text" style = {{marginLeft: '64px'}} value={'0001'}/></p>
                         </div>
                         <div className='service-detail-number-rule__input--reset'>
                             <p>Reset mỗi ngày</p>
@@ -61,14 +107,22 @@ const ServiceDetail = () =>{
                     <div className = "service-detail-box-table__input">
                         <div className = "service-detail-box-table__input--status">
                             <p>Trạng thái</p>
-                            <div className = "service-detail-box-table__input-status--option">
-                                <p>Tất cả</p>
+                            <div className = "service-detail-box-table__input-status--option" onClick = {()=>setToggleStatusOption(!toggleStatusOption )}>
+                                <p>{`${statusOptionName[statusOption]}`}</p>
                                 {!toggleStatusOption && <AiFillCaretDown style = {{color: '#FF7506'}}/>}
                                 {toggleStatusOption &&<AiFillCaretUp style = {{color: '#FF7506'}}/>}
+                                {toggleStatusOption &&<div className = "service-detail-box-table-status__option">
+                                    <ul>
+                                        <li onClick = {()=>setStatusOption('all')}>Tất cả</li>
+                                        <li onClick = {()=>setStatusOption('complete')}>Đã hoàn thành</li>
+                                        <li onClick = {()=>setStatusOption('made')}>Đã thực hiện</li>
+                                        <li onClick = {()=>setStatusOption('absent')}>Vắng</li>
+                                    </ul>
+                                </div>}
                             </div>
                         </div>
                         <div className = "service-detail-box-table__input--from">
-                            <p className = "service-detail-box-table__input--from--title">Chọn thời gian</p>
+                            <p className = "service-detail-box-table__input--from--title">Chọn thời gian: </p>
                             <div className = "service-input__date--wrapper">
                                 <div className = "service-input-date__from" onClick = {()=>handleToggleCalendarFrom()}>
                                     <FaRegCalendarAlt style = {{color: '#FF7506', verticalAlign: '3px'}}/>
@@ -79,6 +133,18 @@ const ServiceDetail = () =>{
                                     <FaRegCalendarAlt style = {{color: '#FF7506'}}/>
                                     <p>{`${timeTo}`}</p>
                                 </div>
+                                {toggleTimeFrom && <div className = "service__calendar">
+                                <Calendar
+                                    locale="en-GB"
+                                    onChange={(value)=>handleChangeValueFrom(value)}
+                                />
+                                </div>}
+                                {toggleTimeTo && <div className = "service__calendar">
+                                    <Calendar
+                                        locale="en-GB"
+                                        onChange={(value)=>handleChangeValueTo(value)}
+                                    />
+                                </div>}
                             </div>
                         </div>
                         <div className = "service-detail-box-table__input--keyword">
@@ -86,6 +152,33 @@ const ServiceDetail = () =>{
                             <input type = "text" placeholder='Nhập từ khoá' />
                             <BiSearch size = {22} className = "service-detail-box-table__input--keyword-icon"/>
                         </div>
+                    </div>
+                    <div className = "service-detail-box-table__table">
+                        <table>
+                            <tr>
+                                <td width={395}>Số thứ tự</td>
+                                <td width={395}>Trạng thái</td>
+                            </tr>
+                            {data.map((item) => 
+                                <tr>
+                                    <td width={395}>{`${item.count}`}</td>
+                                    <td width={395}>{`${statusOptionName[item.status]}`}</td>
+                                </tr>
+                            )}
+                        </table>
+                    </div>
+                    <div className = "dividePage service-detail__devide-page">
+                        <ul>
+                            <li><AiOutlineCaretLeft style = {{verticalAlign: '-2.5px'}}/></li>
+                            <li style = {{backgroundColor: '#FF7506', color: 'white'}}>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>...</li>
+                            <li>10</li>
+                            <li><AiOutlineCaretRight style = {{verticalAlign: '-2.5px'}}/></li>
+                        </ul>
                     </div>
                 </div>
             </div>

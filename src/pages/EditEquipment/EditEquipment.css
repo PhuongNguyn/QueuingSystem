@@ -9,16 +9,7 @@
     box-sizing: border-box;
 }
 
-.page-box{
-    width: 1152px;
-    height: 550px;
-    background: #FFFFFF;
-    box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
-    border-radius: 16px;
-    margin-top: 16px;
-    padding: 16px 24px;
-    box-sizing: border-box;
-}
+
 
 .edit-equipment__box--title{
     font-weight: 700;

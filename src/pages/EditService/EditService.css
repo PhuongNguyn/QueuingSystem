@@ -4,6 +4,10 @@
     justify-content: space-between;
 }
 
+.edit-service__box{
+    width: 1192px!important;
+}
+
 
 .edit-service-input__service-code p, .edit-service-input__service-name p, .edit-service-input__service-description p{
     font-weight: 600;
