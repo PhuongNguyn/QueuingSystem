@@ -89,6 +89,10 @@ const ManageAccount = () =>{
         'active': 'Hoạt động',
         'nonactive': 'Ngưng hoạt động',
     }
+
+    const handleUpdateClick = ()=>{
+        navigate('editAccount')
+    }
     return (
         <div className='account-page page-css'>
             <h1 className = 'account-page--title page--title'>Danh sách tài khoản</h1>
@@ -138,7 +142,7 @@ const ManageAccount = () =>{
                                         size = {30} style = {item.status == 'active' ? {color: '#34CD26', verticalAlign: '-10px'} : {color: '#EC3740', verticalAlign: '10px'}}
                                     />{`${statusName[item.status]}`}
                                 </td>
-                                <td width = {110}><span>Cập nhật</span></td>
+                                <td width = {110}><span onClick = {()=>handleUpdateClick()}>Cập nhật</span></td>
                             </tr>
                         )}
                     </table>

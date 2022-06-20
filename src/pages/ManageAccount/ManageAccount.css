@@ -110,6 +110,7 @@
     line-height: 21px;
     text-decoration-line: underline;
     color: #4277FF;
+    cursor: pointer;
 }
 
 .manage-account-divide-page{

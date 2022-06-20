@@ -26,6 +26,9 @@ import Role from './pages/Role/Role';
 import CreateRole from './pages/CreateRole/CreateRole';
 import EditRole from './pages/EditRole/EditRole';
 import ManageAccount from './pages/ManageAccount/ManageAccount';
+import CreateAccount from './pages/CreateAccount/CreateAccount';
+import EditAccount from './pages/EditAccount/EditAccount';
+import UserDiary from './pages/UserDiary/UserDiary';
 
 
 function App() {
@@ -53,6 +56,9 @@ function App() {
               <Route path = '/setting/listRole/createRole' element = {<CreateRole/>}/>
               <Route path = '/setting/listRole/editRole' element = {<EditRole/>}/>
               <Route path = '/setting/listAccount' element = {<ManageAccount/>}/>
+              <Route path = '/setting/listAccount/createAccount' element = {<CreateAccount/>}/>
+              <Route path = '/setting/listAccount/editAccount' element = {<EditAccount/>}/>
+              <Route path = '/setting/userDiary' element = {<UserDiary/>}/>
               <Route path = "/userInfo" element = {<UserInfo/>}/>
             </Route>
             <Route path = "/login" element = {<LoginLayout/>}>

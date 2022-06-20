@@ -38,7 +38,9 @@ const Header = () =>{
         'listRole':'Quản lý vai trò',
         'createRole': 'Thêm vai trò',
         'editRole': 'Cập nhật vai trò',
-        'listAccount': 'Quản lí tài khoản'
+        'listAccount': 'Quản lí tài khoản',
+        'createAccount': 'Thêm tài khoản',
+        'editAccount': 'Cập nhật tài khoản'
     }
     const notificationData = [
         {
